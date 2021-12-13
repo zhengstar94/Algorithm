@@ -34,20 +34,19 @@ public class SqurX {
 
         int left = 1;
         int right = x / 2;
-        while(left < right)
-        {
+        // 在区间 [left..right] 查找目标元素
+        while (left < right) {
             int mid = left + (right - left + 1) / 2;
-            if (mid > x / mid)
-            {
-                right = mid -1;
-            }else
-            {
+            // 注意：这里为了避免乘法溢出，改用除法
+            if (mid > x / mid) {
+                // 下一轮搜索区间是 [left..mid - 1]
+                right = mid - 1;
+            } else {
+                // 下一轮搜索区间是 [mid..right]
                 left = mid;
             }
         }
-
         return left;
-
 
     }
 
