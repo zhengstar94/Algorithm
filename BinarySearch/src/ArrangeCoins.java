@@ -47,7 +47,7 @@ public class ArrangeCoins {
         long left = 1;
         long right = n;
 
-        while(left <= right)
+        while(left < right)
         {
             //先取中间数作为行
             long mid = left + (right - left) / 2;
@@ -62,7 +62,7 @@ public class ArrangeCoins {
             }else if(n > count)
             {
                 //排mid行用的硬币数没超过n枚，可能还能多排几行
-                left = mid + 1;
+                left = mid ;
             }else
             {
                 //排mid行用的硬币数已经超过n枚，应该减少行数
@@ -70,7 +70,7 @@ public class ArrangeCoins {
             }
         }
 
-        //注意此处为right的原因，因为进行最后一次比较的时候，如果不是刚好相等，那么就是没放满，所以行数应该是选择right
+        //注意此处为right的原因，因为进行最后一次比较的时候，如果不是刚好与mid相等，那么就是没放满，所以行数应该是选择right mid-1
         return (int)right;
     }
 
