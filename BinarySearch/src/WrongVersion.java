@@ -47,11 +47,11 @@ public class WrongVersion {
             //isBadVersion注意是由题目给出，不用自己实现
             //1.如果isBadVersion(mid)返回true，则说明后面的版本都是错的，就把mid赋值给right，再继续寻找正确的数
             //1.如果isBadVersion(mid)返回false，则说明mid前面都是正确的，就把mid+1赋值给left
-            if (isBadVersion(mid)) {
+            /*if (isBadVersion(mid)) {
                 right = mid;
             } else {
                 left = mid + 1;
-            }
+            }*/
 
         }
         return left;
