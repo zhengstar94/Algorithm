@@ -55,51 +55,35 @@ import java.util.Arrays;
 public class SpecialArray {
     public static int specialArray(int[] nums) {
 
-        int len = nums.length;
-
-        if(0==len)
-        {
-            return -1;
-        }
-
-        Arrays.sort(nums);
-
-        if(nums[0]>=len)
-        {
-            return len;
-        }
-
-
-        int left = 0;
-        int right = len-1;
-
-
-        while (left <= right)
-        {
-            int mid = left + (right-left)/2;
-
-            //如果mid对应的值大于等于长度-mid 并且 前一个值小于长度-mid
-            if((nums[mid] >= len - mid) && nums[mid - 1] < len - mid)
-            {
-                //输出长度 - mid
-                return len - mid;
+        int maxVal = 0;
+        for (int num : nums) {
+            if (num > maxVal) {
+                maxVal = num;
             }
-
-            if(nums[mid] > len - mid)
-            {
-                right = mid -1;
-            }else
-            {
-                left =  mid +1;
-            }
-
         }
 
+        //以数组的形式如 [0,0,1,4,9,6]
+        //[2,1,0,0,1,0,1,0,0,1]
+        int[] counts = new int[maxVal + 1];
+        for (int num : nums) {
+            counts[num] += 1;
+        }
+
+        int sum = 0;
+
+        //[2,1,0,0,1,0,1,0,0,1]
+        //依次遍历
+        for (int i = maxVal; i >= 0; i--) {
+            sum += counts[i];
+            if (sum == i) {
+                return i;
+            }
+        }
         return -1;
     }
 
     public static void main(String[] args) {
-        int[] nums = {0,0};
+        int[] nums = {1,0,0,6,4,9};
 
         System.out.println(specialArray(nums));
 
