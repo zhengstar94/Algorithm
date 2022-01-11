@@ -67,7 +67,7 @@ public class BreakfastNumber {
             if (staple[i] + drinks[j] <= x) {
                 //如果是的话，说明staple第一个数 与 drinks最大的数相加都不会超过x
                 //因为j是下标，所以j+1就为第一次遍历的个数集合
-                //日后i的位置移动第二位
+                //然后i的位置移动第二位
                 result += j + 1;
                 i++;
             } else {
