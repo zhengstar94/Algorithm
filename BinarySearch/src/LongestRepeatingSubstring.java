@@ -39,6 +39,19 @@ import java.util.Set;
  **/
 public class LongestRepeatingSubstring {
 
+
+    /**
+     * 1.比如aabcaabdaab，长度为11，mid为5的长度
+     * 2.调用f函数，依次遍历aabcaabdaab，每次取5个字符，第一次aabca，如果不存在则放入set中，之后遍历是abcaa，依次类推
+     * 3.发现没有符合的数据，f函数返回false，说明长度为5不存在重复字符串，
+     * 4.即right=mid-1，right = 4， 循环，二分法找到mid=2，长度为2，
+     * 5.调用f函数，返回true，说明长度为2的数据存在重复，即left = mid ，循环，二分法 在2与4之间找到mid= 3，长度为3
+     * 6.调用f函数，返回true，说明长度为3的数据存在重复，即left = mid，循环，二分法 在3与4之间找到mid= 4，长度为4
+     * 7.调用f函数，返回true，说明长度为4的数据不存在重复，即right = mid -1 为3 ，循环发现left(3)<right(3)不成立
+     * 8.跳出循环返回left为3
+     * @param s
+     * @return
+     */
     public static int longestRepeatingsubstring(String s) {
         int left = 0, right = s.length() - 1;
         while(left < right) {
@@ -53,9 +66,15 @@ public class LongestRepeatingSubstring {
 
     }
 
+    /**
+     * @param s
+     * @param length
+     * @return
+     */
     public static boolean f(String s, int length) {
         Set<String> seen = new HashSet<>();
         for (int i = 0; i <= s.length() - length; i++) {
+            //通过length依次往后截取字符串
             int j = i + length - 1;
             String sub = s.substring(i, j + 1);
             if (seen.contains(sub)) {
@@ -67,7 +86,7 @@ public class LongestRepeatingSubstring {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestRepeatingsubstring("abbaba"));
+        System.out.println(longestRepeatingsubstring("aabcaabdaab"));
     }
 
 
