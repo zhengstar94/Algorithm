@@ -69,8 +69,8 @@ public class NextGreatestLetter {
             return letters[0];
         }
 
-        //之所以不用<=是为了防止出现left=0，right=0，的情况，如果出现了那么  mid=(0+0)/2明显有错误
-        while(left < right)
+
+        while(left <= right)
         {
             int mid = left + (right - left)/2;
             int intMid = (int)letters[mid];
@@ -82,7 +82,7 @@ public class NextGreatestLetter {
             }else
             {
                 //如果大于的话，则mid赋值给right
-                right = mid;
+                right = mid -1 ;
             }
 
         }
