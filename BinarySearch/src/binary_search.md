@@ -236,7 +236,8 @@ if (nums[mid] < target) {
 
 由于 while 的退出条件是 `left == right + 1`，所以当 `target` 比 `nums` 中所有元素都大时，会存在以下情况使得索引越界：
 
-![](../pictures/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/2.jpg)
+![](https://user-images.githubusercontent.com/48857888/150283026-a7d82517-2a10-4917-a84d-e01c924ec4f7.png)
+
 
 因此，最后返回结果的代码应该检查越界情况：
 
@@ -320,7 +321,8 @@ if (nums[mid] == target) {
     // 这样想: mid = left - 1
 ```
 
-![](../pictures/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/3.jpg)
+![](https://user-images.githubusercontent.com/48857888/150283082-02409b36-81db-4228-8723-526ff41fc738.png)
+
 
 因为我们对 `left` 的更新必须是 `left = mid + 1`，就是说 while 循环结束时，`nums[left]` 一定不等于 `target` 了，而 `nums[left-1]` 可能是 `target`。
 
@@ -365,7 +367,7 @@ int right_bound(int[] nums, int target) {
 
 当 `target` 比所有元素都小时，`right` 会被减到 -1，所以需要在最后防止越界：
 
-![](../pictures/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/4.jpg)
+![](https://user-images.githubusercontent.com/48857888/150283125-4e6f2815-6dec-44be-9049-b2800cec6b55.png)
 
 至此，搜索右侧边界的二分查找的两种写法也完成了，其实将「搜索区间」统一成两端都闭反而更容易记忆，你说是吧？
 
