@@ -57,6 +57,9 @@ public class MinSubArrayLen {
 
         //循环遍历
         for (int i = 0; i <= length; i++) {
+            //如[2，5，7，10，15，18，20]
+            //sum[] 数据则为：[0, 2, 7, 14, 24, 39, 57, 77]
+
             //sums[k]-sums[j]>=s 那么 k-j 就是满足的连续子数组，但不一定是最小的
             //所以改成sums[k]  >= sums[j]+s
             //我们只需要求出 sum[j]+s 的值，然后使用二分法查找即可找到这个 k
