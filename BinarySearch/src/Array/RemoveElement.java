@@ -66,10 +66,55 @@ public class RemoveElement {
         return k;
     }
 
+    public static int removeElement2(int[] nums, int val) {
+        int left = 0;
+        int right = nums.length;
+        while (left < right) {
+            if (nums[left] == val) {
+                nums[left] = nums[right - 1];
+                right--;
+            } else {
+                left++;
+            }
+        }
+        return left;
+    }
+
+    public static int removeElement3(int[] nums, int val) {
+        if(nums.length == 0){
+            return 0 ;
+        }
+
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            while (left < right && nums[left] != val) {
+                left++;
+            }
+            while (left < right && nums[right] == val) {
+                right--;
+            }
+            swap(nums,left,right);
+        }
+        if(nums[left] == val){
+            return left;
+        }else{
+            return left + 1;
+        }
+
+    }
+
+    public static void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+
+
     public static void main(String[] args) {
-        int[] nums = {0,1,2,2,3,0,4,2};
+        int[] nums = {3,2,2,3};
         int val = 2;
-        System.out.println(removeElement(nums,val));
+        System.out.println(removeElement3(nums,val));
     }
 
 }
