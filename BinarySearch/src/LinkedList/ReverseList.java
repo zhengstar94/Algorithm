@@ -73,17 +73,51 @@ public class ReverseList {
         return pre;
     }
 
+    public static ListNode reverseList2(ListNode head) {
+        // 1->2->3->4
+        //head->head.next
+
+        //1.准备两个空结点 pre用来保存先前结点、next用来做临时变量
+        ListNode dummyHead  = new ListNode();
+        dummyHead.next = head;
+
+        while (head != null){
+            //dnext = 1->2->3->4
+            ListNode dnext = dummyHead.next ;
+            //hnext = 2->3->4
+            ListNode hnext =head.next;
+
+            //    head.next  = 1->3->4
+            head.next = head.next.next;
+
+            // dummyHead.next  = dummyHead->2->3->4
+            dummyHead.next = hnext;
+
+            //dnext = 1->3->4
+            //hnext.next = dummyHead->2->1->3->4
+            hnext.next = dnext;
+
+            System.out.println(1);
+
+
+
+
+        }
+        //输出翻转后的list
+        return dummyHead.next;
+    }
+
+
+
     public static void main(String[] args) {
         ListNode dummyHead1  = new ListNode(1);
         ListNode dummyHead2 = new ListNode(2);
         ListNode dummyHead3  = new ListNode(3);
         ListNode dummyHead4  = new ListNode(4);
-        ListNode dummyHead5  = new ListNode(5);
         dummyHead1.next = dummyHead2;
         dummyHead2.next = dummyHead3;
         dummyHead3.next = dummyHead4;
-        dummyHead4.next = dummyHead5;
-        System.out.println(reverseList(dummyHead1));
+        System.out.println(reverseList2(dummyHead1));
     }
 
 }
