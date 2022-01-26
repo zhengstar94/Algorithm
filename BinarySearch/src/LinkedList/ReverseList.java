@@ -69,6 +69,7 @@ public class ReverseList {
             //node = next;
             //循环直到node为空退出循环
         }
+        //输出翻转后的list
         return pre;
     }
 
