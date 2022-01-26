@@ -57,6 +57,9 @@ public class RemoveElements {
             return head;
         }
         head.next = removeElements2(head.next, val);
+
+        // 如果 head的节点值等于 val，则 head需要被删除，因此删除操作后的头节点为 head.next
+        //如果 head 的节点值不等于 val，则 head 保留，因此删除操作后的头节点还是 head
         return head.val == val ? head.next : head;
     }
 
