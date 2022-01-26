@@ -97,8 +97,6 @@ public class ReverseList {
             //hnext.next = dummyHead->2->1->3->4
             hnext.next = dnext;
 
-            System.out.println(1);
-
 
 
 
