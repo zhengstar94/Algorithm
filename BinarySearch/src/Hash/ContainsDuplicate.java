@@ -31,7 +31,7 @@ import java.util.Set;
  * @date 2022/01/30 14:54
  **/
 public class ContainsDuplicate {
-    public boolean containsDuplicate(int[] nums) {
+    public static boolean containsDuplicate(int[] nums) {
 
         Set<Integer> set = new HashSet<Integer>();
 
@@ -47,7 +47,8 @@ public class ContainsDuplicate {
     }
 
     public static void main(String[] args) {
-
+        int[] nums = {2,4};
+        System.out.println(containsDuplicate(nums));
     }
 
 }
