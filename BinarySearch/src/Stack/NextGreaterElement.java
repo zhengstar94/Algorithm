@@ -65,6 +65,8 @@ public class NextGreaterElement {
     }
 
     public static void main(String[] args) {
-
+        int[] nums1 = {2,4};
+        int[] nums2 = {1,2,3,4};
+        System.out.println(Arrays.toString(nextGreaterElement(nums1,nums2)));
     }
 }
