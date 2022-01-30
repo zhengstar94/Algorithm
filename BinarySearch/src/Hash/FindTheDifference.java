@@ -33,6 +33,7 @@ package Hash;
 public class FindTheDifference {
 
     public static char findTheDifference(String s, String t) {
+        //两个字符串的ASCII 求和取差值，差值即为随机元素
         int as = 0, at = 0;
         for (int i = 0; i < s.length(); ++i) {
             as += s.charAt(i);
