@@ -55,7 +55,7 @@ public class HIndex {
         int left = 0;
         int right = n - 1;
 
-        while (left < right){
+        while (left <= right){
             int mid = left + (right - left) / 2;
             //0,1,3,5,6,7
             if(citations[mid] >= n - mid){
@@ -70,7 +70,9 @@ public class HIndex {
     }
 
     public static void main(String[] args) {
+        int[] citations = {0,1,3,7,8};
 
+        System.out.println(hIndex(citations));
     }
 
 }
