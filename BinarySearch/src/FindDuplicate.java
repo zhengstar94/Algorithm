@@ -59,7 +59,7 @@ public class FindDuplicate {
      * @param nums
      * @return
      */
-    public int findDuplicate(int[] nums) {
+    public static int findDuplicate(int[] nums) {
         int len = nums.length;
         int left = 1;
         int right = len - 1;
