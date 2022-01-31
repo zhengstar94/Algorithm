@@ -67,6 +67,7 @@ public class FindDuplicate {
             int mid = left + (right - left) / 2;
 
             int cnt = 0;
+            //统计数字之和
             for (int num : nums) {
                 if (num <= mid) {
                     cnt += 1;
