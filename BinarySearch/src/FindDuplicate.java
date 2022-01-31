@@ -86,4 +86,8 @@ public class FindDuplicate {
         return left;
     }
 
+    public static void main(String[] args) {
+
+    }
+
 }
