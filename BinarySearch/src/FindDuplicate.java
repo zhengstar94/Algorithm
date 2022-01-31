@@ -67,7 +67,7 @@ public class FindDuplicate {
             int mid = left + (right - left) / 2;
 
             int cnt = 0;
-            //统计数字之和
+            //统计数字之和，小于等于mid的情况下，统计cnt个数
             for (int num : nums) {
                 if (num <= mid) {
                     cnt += 1;
@@ -87,7 +87,7 @@ public class FindDuplicate {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(findDuplicate(new int[]{3,1,3,4,2}));
     }
 
 }
