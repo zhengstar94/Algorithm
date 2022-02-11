@@ -1,4 +1,4 @@
-/**
+package Medium; /**
  * 275. H 指数 II/力扣275
  *
  * 给你一个整数数组 citations ，其中 citations[i] 表示研究者的第 i 篇论文被引用的次数，citations 已经按照 升序排列 。
