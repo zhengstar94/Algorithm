@@ -51,4 +51,8 @@ public class CountNodes {
         }
         return 1 + countNodes(root.left) + countNodes(root.right);
     }
+
+    public static void main(String[] args) {
+
+    }
 }
