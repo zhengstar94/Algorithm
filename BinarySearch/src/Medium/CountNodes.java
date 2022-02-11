@@ -132,9 +132,4 @@ public class CountNodes {
         return node != null;
     }
 
-
-
-    public static void main(String[] args) {
-
-    }
 }
