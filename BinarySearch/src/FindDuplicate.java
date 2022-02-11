@@ -60,6 +60,17 @@ public class FindDuplicate {
      * @return
      */
     public static int findDuplicate(int[] nums) {
+        // 我们不要考虑数组,只需要考虑 数字都在 1 到 n 之间
+        //        示例 1:
+        //        arr = [1,3,4,2,2] 此时数字在 1 — 5 之间
+        //
+        //        mid = (1 + 5) / 2 = 3 arr小于等于的3有4个(1,2,2,3)，1到3中肯定有重复的值
+        //        mid = (1 + 3) / 2 = 2 arr小于等于的2有3个(1,2,2)，1到2中肯定有重复的值
+        //        mid = (1 + 2) / 2 = 1 arr小于等于的1有1个(1)，2到2中肯定有重复的值
+        //        所以重复的数是 2
+
+
+
         int len = nums.length;
         int left = 1;
         int right = len - 1;
